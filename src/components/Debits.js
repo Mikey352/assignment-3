@@ -4,33 +4,64 @@ src/components/Debits.js
 The Debits component contains information for Debits page view.
 Note: You need to work on this file for the Assignment.
 ==================================================*/
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
-const Debits = (props) => {
-  // Create the list of Debit items
+const Debits = ({ debits, addDebit, accountBalance }) => {
+  // using desconstructed instead of props
+  const [formData, setFormData] = useState({
+    // used to store form data
+    description: "",
+    amount: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newDebit = {
+      description: formData.description,
+      amount: parseFloat(formData.amount),
+      date: new Date().toISOString().slice(0, 10),
+    };
+    addDebit(newDebit);
+    setFormData({ description: "", amount: "" }); //reset once we have submitted
+  };
+
   let debitsView = () => {
-    const { debits } = props;
-    return debits.map((debit) => {  // Extract "id", "amount", "description" and "date" properties of each debits JSON array element
-      let date = debit.date.slice(0,10);
-      return <li key={debit.id}>{debit.amount} {debit.description} {date}</li>
+    return debits.map((debit) => {
+      // Extract "id", "amount", "description" and "date" properties of each debits JSON array element
+      let date = debit.date.slice(0, 10);
+      return (
+        <li key={debit.id}>
+          {debit.amount} {debit.description} {date}
+        </li>
+      );
     });
-  }
-  // Render the list of Debit items and a form to input new Debit item
+  };
+
   return (
     <div>
       <h1>Debits</h1>
-
+      <h2>Account Balance: {accountBalance.toFixed(2)}</h2>
       {debitsView()}
-
-      <form onSubmit={props.addDebit}>
-        <input type="text" name="description" />
-        <input type="number" name="amount" />
-        <button type="submit">Add Debit</button>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={formData.description}
+          onChange={(e) =>
+            setFormData({ ...formData, description: e.target.value })
+          }
+        />
+        <input
+          type="number"
+          value={formData.amount}
+          onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
+        />
+        <button type="submit">Add Purchase</button>
       </form>
-      <br/>
+      <br />
       <Link to="/">Return to Home</Link>
     </div>
   );
-}
+};
 
 export default Debits;
