@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/github.io/assignment-3/static/css/main.01e685fb.css",
-    "main.js": "/github.io/assignment-3/static/js/main.6772acfb.js",
-    "static/js/453.d81f9453.chunk.js": "/github.io/assignment-3/static/js/453.d81f9453.chunk.js",
-    "index.html": "/github.io/assignment-3/index.html",
-    "main.01e685fb.css.map": "/github.io/assignment-3/static/css/main.01e685fb.css.map",
-    "main.6772acfb.js.map": "/github.io/assignment-3/static/js/main.6772acfb.js.map",
-    "453.d81f9453.chunk.js.map": "/github.io/assignment-3/static/js/453.d81f9453.chunk.js.map"
+    "main.css": "/assignment-3/static/css/main.01e685fb.css",
+    "main.js": "/assignment-3/static/js/main.fce482a0.js",
+    "static/js/453.d81f9453.chunk.js": "/assignment-3/static/js/453.d81f9453.chunk.js",
+    "index.html": "/assignment-3/index.html",
+    "main.01e685fb.css.map": "/assignment-3/static/css/main.01e685fb.css.map",
+    "main.fce482a0.js.map": "/assignment-3/static/js/main.fce482a0.js.map",
+    "453.d81f9453.chunk.js.map": "/assignment-3/static/js/453.d81f9453.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.01e685fb.css",
-    "static/js/main.6772acfb.js"
+    "static/js/main.fce482a0.js"
   ]
 }
